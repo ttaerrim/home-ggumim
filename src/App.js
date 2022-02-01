@@ -1,9 +1,16 @@
 import { HomeProvider } from "HomeContext";
-import Home from "Home";
+import HomeTemplate from "components/HomeTemplate";
+import FurnitureList from "components/FurnitureList";
+import ImageContainer from "components/ImageContainer";
+import ButtonList from "components/ButtonList";
 function App() {
   return (
     <HomeProvider>
-      <Home />
+      <HomeTemplate>
+        <ImageContainer />
+        <ButtonList />
+        <FurnitureList />
+      </HomeTemplate>
     </HomeProvider>
   );
 }

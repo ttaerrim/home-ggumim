@@ -77,7 +77,6 @@ export function useHomeState() {
   if (!state) {
     throw new Error("Cannot find HomeProvider");
   }
-  console.log(state);
   return state;
 }
 
