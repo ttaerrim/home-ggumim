@@ -1,5 +1,5 @@
-import { useFurnitureIdx } from "HomeContext";
 import React from "react";
+import { useFurnitureIdx } from "context/HomeContext";
 import styled, { css } from "styled-components";
 
 const FurnitureDetailBox = styled.div`

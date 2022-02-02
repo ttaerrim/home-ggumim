@@ -1,6 +1,6 @@
 import React from "react";
-import { useHomeState } from "HomeContext";
-import ButtonItem from "./ButtonItem";
+import { useHomeState } from "context/HomeContext";
+import ButtonItem from "components/Detail/ButtonItem";
 
 const ButtonList = () => {
   const state = useHomeState();

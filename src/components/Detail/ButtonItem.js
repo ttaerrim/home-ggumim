@@ -1,7 +1,7 @@
-import { useFurnitureIdx, useHomeState } from "HomeContext";
-import React, { useState } from "react";
+import React, { useCallback } from "react";
+import { useFurnitureIdx } from "context/HomeContext";
 import styled, { css } from "styled-components";
-import FurnitureDetailItem from "./FurnitureDetailItem";
+import FurnitureDetailItem from "components/Detail/FurnitureDetailItem";
 
 const MAGNIFYING_GLASS =
   "https://cdn.ggumim.co.kr/storage/20211029145238AlZrQ41xtg.png";
@@ -37,12 +37,15 @@ const ButtonItem = ({
 }) => {
   const { clickIdx, setClickIdx } = useFurnitureIdx();
 
-  const onClick = (e) => {
-    setClickIdx(e.target.id);
-    if (clickIdx === id.toString()) {
-      setClickIdx("0");
-    }
-  };
+  const onClick = useCallback(
+    (e) => {
+      setClickIdx(e.target.id);
+      if (clickIdx === id.toString()) {
+        setClickIdx("0");
+      }
+    },
+    [clickIdx]
+  );
   return (
     <React.Fragment>
       <Button

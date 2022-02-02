@@ -1,8 +1,8 @@
-import { FurnitureProvider, HomeProvider } from "HomeContext";
+import { FurnitureProvider, HomeProvider } from "context/HomeContext";
 import HomeTemplate from "components/HomeTemplate";
-import FurnitureList from "components/FurnitureList";
+import FurnitureList from "components/Furniture/FurnitureList";
 import ImageContainer from "components/ImageContainer";
-import ButtonList from "components/ButtonList";
+import ButtonList from "components/Detail/ButtonList";
 import GlobalStyle from "GlobalStyle";
 function App() {
   return (

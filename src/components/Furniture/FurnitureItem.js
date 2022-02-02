@@ -1,6 +1,5 @@
-import { useFurnitureIdx } from "HomeContext";
-import React, { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import React, { useCallback } from "react";
+import { useFurnitureIdx } from "context/HomeContext";
 import styled, { css } from "styled-components";
 
 const DISCOUNT_BACKGROUND =
@@ -73,12 +72,15 @@ const DiscountDiv = styled.div`
 
 const FurnitureItem = ({ id, img, outside, discountRate }) => {
   const { clickIdx, setClickIdx } = useFurnitureIdx();
-  const onClick = (e) => {
-    setClickIdx(e.target.id);
-    if (clickIdx === id.toString()) {
-      setClickIdx("0");
-    }
-  };
+  const onClick = useCallback(
+    (e) => {
+      setClickIdx(e.target.id);
+      if (clickIdx === id.toString()) {
+        setClickIdx("0");
+      }
+    },
+    [clickIdx]
+  );
   return (
     <FurnitureOuterBlock active={id.toString() === clickIdx}>
       <FurnitureItemBlock

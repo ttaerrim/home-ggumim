@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getHome, useHomeDispatch, useHomeState } from "HomeContext";
+import { useHomeState } from "context/HomeContext";
+import FurnitureItem from "components/Furniture/FurnitureItem";
 import styled from "styled-components";
-import FurnitureItem from "./FurnitureItem";
 
 const FurnitureListBlock = styled.div`
   width: 100%;

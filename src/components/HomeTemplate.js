@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import { useHomeState, useHomeDispatch, getHome } from "HomeContext";
+import { useHomeState, useHomeDispatch, getHome } from "context/HomeContext";
 import styled from "styled-components";
-import ButtonItem from "./ButtonItem";
 
 const HomeTemplateBlock = styled.div`
   object-fit: cover;
@@ -27,4 +26,4 @@ const HomeTemplate = ({ children }) => {
   return <HomeTemplateBlock>{children}</HomeTemplateBlock>;
 };
 
-export default React.memo(HomeTemplate);
+export default HomeTemplate;
