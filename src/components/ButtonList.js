@@ -8,7 +8,7 @@ const ButtonList = () => {
   const { data: home } = state.home;
 
   return (
-    <div>
+    <React.Fragment>
       {home.productList.map((p) => (
         <ButtonItem
           key={p.productId}
@@ -22,7 +22,7 @@ const ButtonList = () => {
           priceDiscount={p.priceDiscount}
         />
       ))}
-    </div>
+    </React.Fragment>
   );
 };
 

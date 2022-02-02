@@ -4,13 +4,14 @@ import styled from "styled-components";
 import ButtonItem from "./ButtonItem";
 
 const HomeTemplateBlock = styled.div`
-  width: 500px;
   object-fit: cover;
   margin: 0 auto;
+  width: 500px;
 
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 const HomeTemplate = ({ children }) => {
   const state = useHomeState();

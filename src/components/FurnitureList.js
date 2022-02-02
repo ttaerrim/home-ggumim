@@ -6,21 +6,21 @@ import FurnitureItem from "./FurnitureItem";
 const FurnitureListBlock = styled.div`
   width: 100%;
   height: 100px;
-  bottom: -120px;
-  left: 0;
-  position: absolute;
-  background-color: #c9cccf;
 
   display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
 `;
 const FurnitureList = () => {
   const state = useHomeState();
 
-  const { data: home, loading, error } = state.home;
+  const { data: home } = state.home;
 
   const [products, setProducts] = useState([]);
-  //   const products = home && home.productList;
-  //   console.log(products);
   useEffect(() => {
     if (home) {
       setProducts(home.productList);
@@ -32,6 +32,7 @@ const FurnitureList = () => {
       {products.map((p) => (
         <FurnitureItem
           key={p.productId}
+          id={p.productId}
           img={p.imageUrl}
           outside={p.outside}
           discountRate={p.discountRate}
