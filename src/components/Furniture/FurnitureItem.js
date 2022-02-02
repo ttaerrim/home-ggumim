@@ -53,7 +53,7 @@ const FurnitureItemBlock = styled.div`
   }
 `;
 const DiscountDiv = styled.div`
-  background-image: url(//cdn.ggumim.co.kr/storage/20211117191419RW6JS6bjRm.png);
+  background-image: url(${DISCOUNT_BACKGROUND});
   background-size: contain;
   position: absolute;
   top: -1px;
