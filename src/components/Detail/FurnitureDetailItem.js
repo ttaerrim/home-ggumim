@@ -9,11 +9,24 @@ const FurnitureDetailBox = styled.div`
   border-radius: 7px;
   position: absolute;
   display: flex;
-  ${(props) =>
-    css`
-      top: ${props.x + 28}px;
-      left: ${props.y - 20}px;
-    `}
+  ${({ x, y }) => {
+    if (y > 300) {
+      return css`
+        top: ${x + 28}px;
+        left: ${y - 100}px;
+      `;
+    }
+    if (x > 300) {
+      return css`
+        top: ${x - 68}px;
+        left: ${y - 20}px;
+      `;
+    }
+    return css`
+      top: ${x + 28}px;
+      left: ${y - 20}px;
+    `;
+  }}
   z-index: 10;
   box-shadow: 1px 2px 3px 1px rgba(194, 194, 194, 0.54);
 
@@ -26,6 +39,23 @@ const FurnitureDetailBox = styled.div`
     position: absolute;
     top: -6px;
     left: 24px;
+    ${({ x, y }) => {
+      if (y > 300) {
+        return css`
+          left: 104px;
+        `;
+      }
+      if (x > 300) {
+        return css`
+          border-top: 7px solid white;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 0px solid transparent;
+          top: 60px;
+          left: 24px;
+        `;
+      }
+    }}
   }
 `;
 const Img = styled.img`
